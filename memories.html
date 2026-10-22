@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Memories 💕</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #ffe1ed,
+                #f7dcff,
+                #e3ddff
+            );
+
+            font-family: "Comic Sans MS", "Segoe UI", cursive;
+
+            padding: 55px 20px;
+
+            text-align: center;
+
+            overflow-x: hidden;
+        }
+
+
+        /* TITLE */
+
+        .title {
+            color: #ff4f87;
+
+            font-size: 45px;
+
+            margin-bottom: 12px;
+
+            animation: titleAppear 1s ease;
+        }
+
+
+        .subtitle {
+            color: #777;
+
+            font-size: 18px;
+
+            margin-bottom: 45px;
+        }
+
+
+        /* PHOTO GALLERY */
+
+        .gallery {
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* MEMORY CARDS */
+
+        .memory-card {
+            background: white;
+
+            padding: 14px 14px 25px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(120, 70, 130, 0.18);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            animation: cardAppear 1s ease;
+        }
+
+
+        .memory-card:nth-child(1) {
+            transform: rotate(-2deg);
+        }
+
+
+        .memory-card:nth-child(2) {
+            transform: rotate(2deg);
+        }
+
+
+        .memory-card:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+
+
+        .memory-card:hover {
+            transform:
+                translateY(-10px)
+                scale(1.03)
+                rotate(0);
+
+            box-shadow:
+                0 18px 40px
+                rgba(255, 79, 135, 0.25);
+        }
+
+
+        /* PHOTOS */
+
+        .memory-card img {
+            width: 100%;
+
+            height: 300px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            display: block;
+
+            border-radius: 14px;
+        }
+
+
+        /* PHOTO CAPTIONS */
+
+        .caption {
+            margin-top: 18px;
+
+            color: #ff6598;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        /* BOTTOM MESSAGE */
+
+        .bottom-message {
+            margin-top: 50px;
+
+            color: #666;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+        }
+
+
+        /* NEXT BUTTON */
+
+        .next-btn {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 16px 35px;
+
+            border-radius: 30px;
+
+            background: linear-gradient(
+                135deg,
+                #ff5a91,
+                #ff81aa
+            );
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 7px 20px
+                rgba(255, 90, 145, 0.30);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .next-btn:hover {
+            transform: scale(1.08);
+
+            box-shadow:
+                0 10px 25px
+                rgba(255, 52, 119, 0.40);
+        }
+
+
+        /* FLOATING HEARTS */
+
+        .heart {
+            position: fixed;
+
+            bottom: -50px;
+
+            font-size: 25px;
+
+            pointer-events: none;
+
+            opacity: 0;
+
+            animation:
+                floatHeart 7s linear infinite;
+        }
+
+
+        .heart1 {
+            left: 8%;
+            animation-delay: 0s;
+        }
+
+
+        .heart2 {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+
+        .heart3 {
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+
+        .heart4 {
+            left: 75%;
+            animation-delay: 1s;
+        }
+
+
+        .heart5 {
+            left: 90%;
+            animation-delay: 3s;
+        }
+
+
+        /* ANIMATIONS */
+
+        @keyframes titleAppear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(-25px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes cardAppear {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(40px)
+                    scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes floatHeart {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+
+            20% {
+                opacity: 0.7;
+            }
+
+
+            80% {
+                opacity: 0.7;
+            }
+
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+
+            .gallery {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding:
+                    40px 15px;
+            }
+
+
+            .title {
+                font-size: 35px;
+            }
+
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+
+            .gallery {
+                grid-template-columns: 1fr;
+
+                max-width: 340px;
+            }
+
+
+            .memory-card img {
+                height: 350px;
+            }
+
+
+            .bottom-message {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="heart heart1">💕</div>
+
+    <div class="heart heart2">✨</div>
+
+    <div class="heart heart3">🌸</div>
+
+    <div class="heart heart4">💗</div>
+
+    <div class="heart heart5">♡</div>
+
+
+
+    <!-- TITLE -->
+
+    <h1 class="title">
+
+        Our Little Memories 📸💕
+
+    </h1>
+
+
+    <p class="subtitle">
+
+        Some moments are simply too special to forget ✨
+
+    </p>
+
+
+
+    <!-- PHOTO GALLERY -->
+
+    <div class="gallery">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="memory-card">
+
+            <img
+                src="Image/photo1.jpg"
+                alt="Memory photo 1"
+            >
+
+            <p class="caption">
+
+                The beginning 💕
+
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="memory-card">
+
+            <img
+                src="Image/photo2.jpg"
+                alt="Memory photo 2"
+            >
+
+            <p class="caption">
+
+                One of my favourites ✨
+
+            </p>
+
+        </div>
+
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="memory-card">
+
+            <img
+                src="Image/photo3.jpg"
+                alt="Memory photo 3"
+            >
+
+            <p class="caption">
+
+                More memories to come 💖
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- BOTTOM MESSAGE -->
+
+    <div class="bottom-message">
+
+        And somehow...
+
+        <br>
+
+        every memory became a little more special 🌷
+
+        <br>
+
+        But we're not finished yet 👀
+
+    </div>
+
+
+
+    <!-- NEXT PAGE -->
+
+    <a
+        
