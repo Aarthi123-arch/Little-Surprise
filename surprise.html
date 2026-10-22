@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yayyy 💕</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #ffe0ec,
+                #f8dcff,
+                #dddfff
+            );
+
+            font-family: "Comic Sans MS", "Segoe UI", cursive;
+            padding: 20px;
+        }
+
+        .card {
+            width: 500px;
+            max-width: 95%;
+            padding: 55px 35px;
+            background: white;
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(131, 77, 142, 0.20);
+            animation: appear 1s ease;
+        }
+
+        .gift {
+            font-size: 60px;
+            animation: bounce 1.5s infinite;
+        }
+
+        h1 {
+            color: #ff4f87;
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        p {
+            color: #777;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 23px;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .ready-btn,
+        .wait-btn {
+            border: none;
+            border-radius: 30px;
+            padding: 15px 25px;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .ready-btn {
+            background: #ff5a91;
+            color: white;
+            text-decoration: none;
+        }
+
+        .wait-btn {
+            background: #eeeeee;
+            color: #555;
+        }
+
+        #funnyMessage {
+            margin-top: 20px;
+            color: #ff5a91;
+            font-weight: bold;
+            min-height: 25px;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="card">
+
+        <div class="gift">🎁</div>
+
+        <h1>Yayyy! 💕</h1>
+
+        <p>
+            I knew you would click YES 😌✨
+            <br>
+            But waittt...
+            <br>
+            The surprise isn't that easy to get 🤭
+        </p>
+
+        <h2>
+            Are you ready for the next part? 👀
+        </h2>
+
+        <div class="buttons">
+
+            <a class="ready-btn" href="memories.html">
+                I'M READY 💖
+            </a>
+
+            <button
+                class="wait-btn"
+                type="button"
+                id="waitBtn"
+            >
+                NOT YET 🙈
+            </button>
+
+        </div>
+
+        <div id="funnyMessage"></div>
+
+    </main>
+
+    <script>
+        const waitButton =
+            document.getElementById("waitBtn");
+
+        const funnyMessage =
+            document.getElementById("funnyMessage");
+
+        waitButton.addEventListener("click", function () {
+            funnyMessage.textContent =
+                "Hehe... okay, take your time 😂💕";
+
+            waitButton.textContent =
+                "OKAY I'M READY 😂";
+        });
+    </script>
+
+</body>
+
+</html>

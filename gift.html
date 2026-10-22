@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Final Surprise 🎁</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #ffd6e7,
+                #f2ddff,
+                #dedfff
+            );
+
+            font-family: "Comic Sans MS", "Segoe UI", cursive;
+
+            padding: 30px 15px;
+
+            overflow-x: hidden;
+
+            text-align: center;
+        }
+
+        .card {
+            width: 750px;
+            max-width: 96%;
+
+            margin: auto;
+
+            background: white;
+
+            border-radius: 35px;
+
+            padding: 35px 25px 45px;
+
+            box-shadow:
+                0 18px 55px
+                rgba(120, 70, 130, 0.22);
+        }
+
+        h1 {
+            color: #ff4f87;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .stage {
+            height: 330px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 28px;
+
+            background: linear-gradient(
+                to bottom,
+                #fff1f7 0%,
+                #f8ecff 75%,
+                #efd2df 75%,
+                #efd2df 100%
+            );
+        }
+
+        .girl {
+            position: absolute;
+
+            left: -180px;
+            bottom: 55px;
+
+            font-size: 100px;
+
+            animation: walkIn 4s ease forwards;
+        }
+
+        .carried-gifts {
+            position: absolute;
+
+            left: -110px;
+            bottom: 95px;
+
+            display: flex;
+            gap: 5px;
+
+            animation: giftsWalk 4s ease forwards;
+        }
+
+        .small-teddy {
+            font-size: 65px;
+        }
+
+        .small-chocolate {
+            font-size: 45px;
+        }
+
+        .present {
+            position: absolute;
+
+            left: 56%;
+            bottom: 50px;
+
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+
+            opacity: 0;
+
+            animation:
+                presentGift 1s ease
+                4.1s forwards;
+        }
+
+        .teddy {
+            font-size: 120px;
+        }
+
+        .chocolate {
+            font-size: 70px;
+        }
+
+        .message {
+            opacity: 0;
+
+            margin-top: 25px;
+
+            animation:
+                messageAppear 1s ease
+                5s forwards;
+        }
+
+        .message h2 {
+            color: #ff4f87;
+            margin-bottom: 12px;
+        }
+
+        .message p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .final-note {
+            opacity: 0;
+
+            margin: 25px auto 0;
+
+            max-width: 520px;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background: #fff1f7;
+
+            color: #ff4f87;
+
+            font-size: 20px;
+            font-weight: bold;
+
+            animation:
+                messageAppear 1s ease
+                6s forwards;
+        }
+
+        @keyframes walkIn {
+
+            0% {
+                left: -180px;
+                transform: translateY(0) rotate(-4deg);
+            }
+
+            25% {
+                transform: translateY(-8px) rotate(4deg);
+            }
+
+            50% {
+                transform: translateY(0) rotate(-4deg);
+            }
+
+            75% {
+                transform: translateY(-8px) rotate(4deg);
+            }
+
+            100% {
+                left: calc(50% - 150px);
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        @keyframes giftsWalk {
+
+            0% {
+                left: -110px;
+            }
+
+            100% {
+                left: calc(50% - 55px);
+            }
+        }
+
+        @keyframes presentGift {
+
+            from {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes messageAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .stage {
+                height: 300px;
+            }
+
+            .girl {
+                font-size: 80px;
+            }
+
+            .teddy {
+                font-size: 90px;
+            }
+
+            .chocolate {
+                font-size: 55px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="card">
+
+        <h1>
+            Surpriseeeee! 🎁💖
+        </h1>
+
+        <p class="subtitle">
+            Someone brought something special for you... 👀✨
+        </p>
+
+        <section class="stage">
+
+            <div class="girl">
+                👧
+            </div>
+
+            <div class="carried-gifts">
+                <span class="small-teddy">🧸</span>
+                <span class="small-chocolate">🍫</span>
+            </div>
+
+            <div class="present">
+                <span class="teddy">🧸</span>
+                <span class="chocolate">🍫</span>
+            </div>
+
+        </section>
+
+        <section class="message">
+
+            <h2>
+                These are especially for you! 🧸🍫💕
+            </h2>
+
+            <p>
+                A cute brown teddy for all the warm hugs 🤎
+                <br>
+                and chocolate because you deserve
+                something sweet 🍫✨
+            </p>
+
+        </section>
+
+        <div class="final-note">
+
+            Thank you for being such a special friend 💕
+            <br>
+            Keep smiling and shining always! ✨
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
