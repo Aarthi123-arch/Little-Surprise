@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Message for You 💌</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #ffdbea,
+                #f3dcff,
+                #dedfff
+            );
+
+            font-family: "Comic Sans MS", "Segoe UI", cursive;
+
+            padding: 40px 20px 70px;
+        }
+
+        .card {
+            width: 560px;
+            max-width: 95%;
+            margin: auto;
+
+            background: white;
+
+            padding: 45px 35px;
+
+            border-radius: 32px;
+
+            text-align: center;
+
+            box-shadow:
+                0 15px 45px
+                rgba(120, 70, 130, 0.20);
+        }
+
+        .envelope {
+            font-size: 75px;
+            animation: bounce 1.8s infinite;
+        }
+
+        h1 {
+            color: #ff4f87;
+            font-size: 40px;
+            margin: 10px 0 15px;
+        }
+
+        .intro {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        button,
+        .final-btn {
+            border: none;
+
+            padding: 15px 30px;
+
+            border-radius: 30px;
+
+            background: #ff5a91;
+
+            color: white;
+
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            display: inline-block;
+        }
+
+        .letter {
+            display: none;
+
+            margin-top: 30px;
+
+            padding: 30px 25px;
+
+            border-radius: 22px;
+
+            background: #fff5f9;
+
+            color: #555;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+        .letter.show {
+            display: block;
+        }
+
+        .letter-title {
+            color: #ff5a91;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            margin-top: 25px;
+            color: #ff5a91;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .final-area {
+            display: none;
+            margin-top: 28px;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="card">
+
+        <div class="envelope">💌</div>
+
+        <h1>
+            One Last Thing...
+        </h1>
+
+        <p class="intro">
+            There is something I wanted to tell you 💕
+            <br>
+            So I wrote you a tiny letter...
+        </p>
+
+        <button
+            id="openButton"
+            type="button"
+        >
+            Open the letter 💌
+        </button>
+
+        <section
+            class="letter"
+            id="letter"
+        >
+
+            <div class="letter-title">
+                To My Favourite Human 💗
+            </div>
+
+            <p>
+                Thank you for being a part of
+                so many beautiful memories. 🌷
+
+                <br><br>
+
+                From our random conversations,
+                silly moments and little adventures...
+
+                <br><br>
+
+                Somehow, they all became memories
+                that I never want to forget. ✨
+
+                <br><br>
+
+                No matter where life takes us,
+                I hope we always have more stories
+                to laugh about and more memories
+                to make together. 💕
+
+                <br><br>
+
+                And most importantly...
+
+                <br><br>
+
+                Thank you for simply being YOU.
+                🥹💖
+            </p>
+
+            <div class="signature">
+                With lots of love 💕
+            </div>
+
+        </section>
+
+        <div
+            class="final-area"
+            id="finalArea"
+        >
+            <a
+                class="final-btn"
+                href="gift.html"
+            >
+                Okay, one final surprise 🎁
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        const openButton =
+            document.getElementById("openButton");
+
+        const letter =
+            document.getElementById("letter");
+
+        const finalArea =
+            document.getElementById("finalArea");
+
+        openButton.addEventListener("click", function () {
+
+            letter.classList.add("show");
+
+            finalArea.style.display = "block";
+
+            openButton.style.display = "none";
+
+            setTimeout(function () {
+                letter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }, 200);
+        });
+    </script>
+
+</body>
+
+</html>
